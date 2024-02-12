@@ -15,6 +15,13 @@
 		C255F97F2B7A530B00B7FF0E /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255F97E2B7A530B00B7FF0E /* NotesView.swift */; };
 		C255F9822B7A534000B7FF0E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255F9812B7A534000B7FF0E /* Note.swift */; };
 		C255F9842B7A535600B7FF0E /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255F9832B7A535600B7FF0E /* NoteCategory.swift */; };
+		C255F98D2B7A5B0900B7FF0E /* 16-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F9862B7A5B0900B7FF0E /* 16-mac.png */; };
+		C255F98E2B7A5B0900B7FF0E /* 64-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F9872B7A5B0900B7FF0E /* 64-mac.png */; };
+		C255F98F2B7A5B0900B7FF0E /* 128-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F9882B7A5B0900B7FF0E /* 128-mac.png */; };
+		C255F9902B7A5B0900B7FF0E /* 256-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F9892B7A5B0900B7FF0E /* 256-mac.png */; };
+		C255F9912B7A5B0900B7FF0E /* 1024-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98A2B7A5B0900B7FF0E /* 1024-mac.png */; };
+		C255F9922B7A5B0900B7FF0E /* 512-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98B2B7A5B0900B7FF0E /* 512-mac.png */; };
+		C255F9932B7A5B0900B7FF0E /* 32-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98C2B7A5B0900B7FF0E /* 32-mac.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		C255F97E2B7A530B00B7FF0E /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		C255F9812B7A534000B7FF0E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		C255F9832B7A535600B7FF0E /* NoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
+		C255F9862B7A5B0900B7FF0E /* 16-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-mac.png"; sourceTree = "<group>"; };
+		C255F9872B7A5B0900B7FF0E /* 64-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "64-mac.png"; sourceTree = "<group>"; };
+		C255F9882B7A5B0900B7FF0E /* 128-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "128-mac.png"; sourceTree = "<group>"; };
+		C255F9892B7A5B0900B7FF0E /* 256-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "256-mac.png"; sourceTree = "<group>"; };
+		C255F98A2B7A5B0900B7FF0E /* 1024-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1024-mac.png"; sourceTree = "<group>"; };
+		C255F98B2B7A5B0900B7FF0E /* 512-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "512-mac.png"; sourceTree = "<group>"; };
+		C255F98C2B7A5B0900B7FF0E /* 32-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "32-mac.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +79,7 @@
 				C255F96A2B7A51C400B7FF0E /* Safe_dataApp.swift */,
 				C255F96C2B7A51C400B7FF0E /* ContentView.swift */,
 				C255F9702B7A51C500B7FF0E /* Assets.xcassets */,
+				C255F9852B7A5AED00B7FF0E /* Icons */,
 				C255F9752B7A51C500B7FF0E /* Safe_data.entitlements */,
 				C255F9722B7A51C500B7FF0E /* Preview Content */,
 			);
@@ -95,6 +110,20 @@
 				C255F9832B7A535600B7FF0E /* NoteCategory.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C255F9852B7A5AED00B7FF0E /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C255F9862B7A5B0900B7FF0E /* 16-mac.png */,
+				C255F98C2B7A5B0900B7FF0E /* 32-mac.png */,
+				C255F9872B7A5B0900B7FF0E /* 64-mac.png */,
+				C255F9882B7A5B0900B7FF0E /* 128-mac.png */,
+				C255F9892B7A5B0900B7FF0E /* 256-mac.png */,
+				C255F98B2B7A5B0900B7FF0E /* 512-mac.png */,
+				C255F98A2B7A5B0900B7FF0E /* 1024-mac.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C255F9742B7A51C500B7FF0E /* Preview Assets.xcassets in Resources */,
+				C255F98E2B7A5B0900B7FF0E /* 64-mac.png in Resources */,
+				C255F98F2B7A5B0900B7FF0E /* 128-mac.png in Resources */,
+				C255F9912B7A5B0900B7FF0E /* 1024-mac.png in Resources */,
+				C255F9922B7A5B0900B7FF0E /* 512-mac.png in Resources */,
+				C255F9932B7A5B0900B7FF0E /* 32-mac.png in Resources */,
+				C255F9902B7A5B0900B7FF0E /* 256-mac.png in Resources */,
 				C255F9712B7A51C500B7FF0E /* Assets.xcassets in Resources */,
+				C255F98D2B7A5B0900B7FF0E /* 16-mac.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Safe data/Safe_data.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -309,6 +346,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Safe data/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Safe cards";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Safe data/Safe_data.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -335,6 +375,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Safe data/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Safe cards";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
