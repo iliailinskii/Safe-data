@@ -102,7 +102,13 @@ struct NoteCardView: View {
                 .fill(.clear)
             
             if showNote {
-                TextEditor(text: $note.content)
+                TextEditor(text: Binding<String>(
+                    get: { note.content ?? "" },
+                    set: { newValue in
+                        // Update the value of note.content
+                        note.content = newValue
+                    }
+                ))
                     .focused(isKeyboardEnabled)
                     .font(.body)
                     /// Custom Hint
@@ -110,7 +116,7 @@ struct NoteCardView: View {
                         Text("Finish Work")
                             .foregroundStyle(.gray)
                             .padding(.leading, 5)
-                            .opacity(note.content.isEmpty ? 1 : 0)
+                            .opacity((note.content ?? "").isEmpty ? 1 : 0)
                             .allowsHitTesting(false)
                     })
                     .scrollContentBackground(.hidden)
