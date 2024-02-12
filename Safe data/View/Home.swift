@@ -23,6 +23,8 @@ struct Home: View {
     @State private var renameRequest: Bool = false
     /// Dark Mode Toggle
     @State private var isDark: Bool = true
+    @State private var selectedOption: Int? = nil
+        
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedTag) {
@@ -127,12 +129,56 @@ struct Home: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 HStack(spacing: 10) {
-                    Button("", systemImage: "plus") {
-                        /// Adding New Note
-                        let note = Note(content: "")
-                        context.insert(note)
-                    }
-                    
+                    Menu {
+                                    Button(action: {
+                                        // Action for first button
+                                        let note = Note(content: "",
+                                                        titleText: "",
+                                                        timeValue: Date().timeIntervalSince1970,
+                                                        type: NoteType(typeValue: "classic")
+                                                        )
+                                        context.insert(note)
+                                    }) {
+                                        Label("Create classic note", systemImage: "1.circle")
+                                    }
+                                    Button(action: {
+                                        // Action for second button
+                                        let note = Note(
+                                                        titleText: "",
+                                                        timeValue: Date().timeIntervalSince1970,
+                                                        cardNumber: "",
+                                                        cardName: "",
+                                                        cardDate: "",
+                                                        cardCvv: "",
+                                                        cardPin: "",
+                                                        type: NoteType(typeValue: "card")
+                                                        )
+                                        context.insert(note)
+                                    }) {
+                                        Label("Save bank card", systemImage: "2.circle")
+                                    }
+                                    Button(action: {
+                                        // Action for third button
+                                        let note = Note(
+                                            titleText: "",
+                                            timeValue: Date().timeIntervalSince1970,
+                                            password: "",
+                                            login: "",
+                                            website: "",
+                                            type: NoteType(typeValue: "password")
+                                        )
+                                        context.insert(note)
+                                    }) {
+                                        Label("Save password", systemImage: "3.circle")
+                                    }
+                                }
+                label: {
+                    Label("Menu Button", systemImage: "plus.circle")
+                }
+                .menuIndicator(.hidden)
+    
+
+
                     Button("", systemImage: isDark ? "sun.min" : "moon") {
                         /// Dark - Light Mode
                         isDark.toggle()
@@ -142,11 +188,12 @@ struct Home: View {
             }
         }
         .preferredColorScheme(isDark ? .dark : .light)
+
     }
 }
 
-#Preview {
-    ContentView()
-}
+        
+
+
 
 

@@ -35,16 +35,23 @@ struct NotesView: View {
     /// Model Context
     @Environment(\.modelContext) private var context
     var body: some View {
-        GeometryReader {
-            let size = $0.size
-            let width = size.width
-            /// Dynamic Grid Count Based on the Available Size
-            let rowCount = max(Int(width / 250), 1)
-            
-            ScrollView(.vertical) {
-                LazyVGrid(columns: Array(repeating: GridItem(spacing: 10), count: rowCount), spacing: 10) {
+        VStack {
+                List {
                     ForEach(notes) { note in
-                        NoteCardView(note: note, isKeyboardEnabled: $isKeyboardEnabled)
+                        NavigationLink( destination: {
+                            if note.type?.typeValue == "classic" {
+                                ClassicNote(note: note)
+                            } else if note.type?.typeValue == "card" {
+                               CardNote(note: note)
+                            } else if note.type?.typeValue == "password" {
+                               CardNote(note: note)
+                             }
+                              else {
+                                // Handle other types or provide a default view
+                                ClassicNote(note: note)}
+                        }
+                        ) {
+                            NoteCardView(note: note, isKeyboardEnabled: $isKeyboardEnabled)}
                             .contextMenu {
                                 Button(note.isFavourite ? "Remove from Favourites" : "Move to Favourites") {
                                     note.isFavourite.toggle()
@@ -64,8 +71,10 @@ struct NotesView: View {
                                                 
                                                 Text(category.categoryTitle)
                                             }
+                                            
                                         }
                                     }
+                                    
                                     
                                     Button("Remove from Categories") {
                                         note.category = nil
@@ -77,16 +86,16 @@ struct NotesView: View {
                                 Button("Delete", role: .destructive) {
                                     context.delete(note)
                                 }
+                                
                             }
                     }
                 }
-                .padding(12)
+                .onTapGesture {
+                    isKeyboardEnabled = false
+                }
+                
             }
-            /// Closing TF When Tapped Outside
-            .onTapGesture {
-                isKeyboardEnabled = false
-            }
-        }
+
     }
 }
 
@@ -96,36 +105,33 @@ struct NoteCardView: View {
     @Bindable var note: Note
     var isKeyboardEnabled: FocusState<Bool>.Binding
     @State private var showNote: Bool = false
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(.clear)
-            
+        ZStack(alignment: .leading) {
+///#error  addd swipes
             if showNote {
-                TextEditor(text: Binding<String>(
-                    get: { note.content ?? "" },
-                    set: { newValue in
-                        // Update the value of note.content
-                        note.content = newValue
-                    }
-                ))
-                    .focused(isKeyboardEnabled)
-                    .font(.body)
-                    /// Custom Hint
-                    .overlay(alignment: .topLeading, content: {
-                        Text("Finish Work")
-                            .foregroundStyle(.gray)
-                            .padding(.leading, 5)
-                            .opacity((note.content ?? "").isEmpty ? 1 : 0)
-                            .allowsHitTesting(false)
-                    })
-                    .scrollContentBackground(.hidden)
+                    Text(note.titleText ?? "")
+                    .font(.headline)
                     .multilineTextAlignment(.leading)
-                    .padding(15)
-                    .frame(maxWidth: .infinity)
-                    .background(.gray.opacity(0.15), in: .rect(cornerRadius: 12))
             }
         }
+        .padding(5)
+        .background()
+        .swipeActions (allowsFullSwipe: false) {
+            Button {
+                    context.delete(note)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+            .tint(.red)}
+        .swipeActions (allowsFullSwipe: false) {
+            Button {
+                    note.isFavourite.toggle()
+            } label: {
+                Label("Favorite", systemImage: "star")
+            }
+            .tint(.yellow)}
         .onAppear {
             showNote = true
         }
@@ -133,10 +139,9 @@ struct NoteCardView: View {
             showNote = false
         }
     }
+
 }
 
-#Preview {
-    ContentView()
-}
+
 
 

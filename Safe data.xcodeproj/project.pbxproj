@@ -22,6 +22,9 @@
 		C255F9912B7A5B0900B7FF0E /* 1024-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98A2B7A5B0900B7FF0E /* 1024-mac.png */; };
 		C255F9922B7A5B0900B7FF0E /* 512-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98B2B7A5B0900B7FF0E /* 512-mac.png */; };
 		C255F9932B7A5B0900B7FF0E /* 32-mac.png in Resources */ = {isa = PBXBuildFile; fileRef = C255F98C2B7A5B0900B7FF0E /* 32-mac.png */; };
+		C2C4330F2B98B74600C545DC /* ClassicNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4330E2B98B74600C545DC /* ClassicNote.swift */; };
+		C2C433112B98B90800C545DC /* NoteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C433102B98B90800C545DC /* NoteType.swift */; };
+		C2C433132B9B607B00C545DC /* CardNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C433122B9B607B00C545DC /* CardNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		C255F98A2B7A5B0900B7FF0E /* 1024-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1024-mac.png"; sourceTree = "<group>"; };
 		C255F98B2B7A5B0900B7FF0E /* 512-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "512-mac.png"; sourceTree = "<group>"; };
 		C255F98C2B7A5B0900B7FF0E /* 32-mac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "32-mac.png"; sourceTree = "<group>"; };
+		C2C4330E2B98B74600C545DC /* ClassicNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicNote.swift; sourceTree = "<group>"; };
+		C2C433102B98B90800C545DC /* NoteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteType.swift; sourceTree = "<group>"; };
+		C2C433122B9B607B00C545DC /* CardNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 			children = (
 				C255F97C2B7A52E900B7FF0E /* Home.swift */,
 				C255F97E2B7A530B00B7FF0E /* NotesView.swift */,
+				C2C4330E2B98B74600C545DC /* ClassicNote.swift */,
+				C2C433122B9B607B00C545DC /* CardNote.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +116,7 @@
 			children = (
 				C255F9812B7A534000B7FF0E /* Note.swift */,
 				C255F9832B7A535600B7FF0E /* NoteCategory.swift */,
+				C2C433102B98B90800C545DC /* NoteType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,8 +213,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C255F9822B7A534000B7FF0E /* Note.swift in Sources */,
+				C2C433112B98B90800C545DC /* NoteType.swift in Sources */,
+				C2C433132B9B607B00C545DC /* CardNote.swift in Sources */,
 				C255F96D2B7A51C400B7FF0E /* ContentView.swift in Sources */,
 				C255F97D2B7A52E900B7FF0E /* Home.swift in Sources */,
+				C2C4330F2B98B74600C545DC /* ClassicNote.swift in Sources */,
 				C255F9842B7A535600B7FF0E /* NoteCategory.swift in Sources */,
 				C255F97F2B7A530B00B7FF0E /* NotesView.swift in Sources */,
 				C255F96B2B7A51C400B7FF0E /* Safe_dataApp.swift in Sources */,
@@ -340,10 +352,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Safe data/Safe_data.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Safe data/Preview Content\"";
+				DEVELOPMENT_TEAM = 6R9M9M9D42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Safe cards";
@@ -369,10 +383,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Safe data/Safe_data.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Safe data/Preview Content\"";
+				DEVELOPMENT_TEAM = 6R9M9M9D42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Safe cards";
