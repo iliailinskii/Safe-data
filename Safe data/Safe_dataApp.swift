@@ -9,24 +9,15 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Safe_dataApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+struct NotesAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                /// Setting Min Frame
+                .frame(minWidth: 320, minHeight: 400)
         }
-        .modelContainer(sharedModelContainer)
+        .windowResizability(.contentSize)
+        /// Adding Data Model to the App
+        .modelContainer(for: [Note.self, NoteCategory.self])
     }
 }
