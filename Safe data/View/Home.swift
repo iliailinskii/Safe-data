@@ -63,8 +63,11 @@ struct Home: View {
                         Button("", systemImage: "plus") {
                             addCategory.toggle()
                         }
+                        .padding(.top, -4.0)
+                        .frame(height: 1.0)
                         .tint(.gray)
                         .buttonStyle(.plain)
+                        
                     }
                 }
             }
